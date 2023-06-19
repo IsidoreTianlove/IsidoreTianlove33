@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<meta name="applicable-device" content="pc,mobile">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>活动详情{$vod_id}</title>
+    <!-- web-fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- off-canvas -->
+    <link href="/skin/css/mobile-menu.css" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="/skin/css/font-awesome.min.css" rel="stylesheet">    
+    <!-- Flat Icon -->
+    <link href="/skin/fonts/flaticon/flaticon.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <!-- <link href="/skin/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Style CSS -->
+    <link href="/skin/css/style.css" rel="stylesheet">
+    <!-- layui CSS -->
+    <link href="/skin/layui276/css/layui.css" rel="stylesheet">
+    <!-- animate CSS -->
+    <link href="/skin/css/animate.min.css" rel="stylesheet">
+    <script src="/skin/js/douyinLogin.js"></script>
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=znVzHURUS5B0BoBq6gfDUwGcadNIkonW"></script>
+    <!-- swiper CSS -->
+    <!-- <link href="/skin/swiper-master/package/swiper-bundle.min.css" rel="stylesheet"> -->
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- SlidePushMenus CSS JS -->
+<!--     <link href="/skin/SlidePushMenus/css/component.css" rel="stylesheet" type="text/css"/>
+    <script src="/skin/SlidePushMenus/js/modernizr.custom.js"></script> -->
+
+<body style="background-color: #161922;">
+<div id="allmap"></div>
+<!-- top start -->
+
+<div class="zdb_card_index">
+
+  <div class="zdb_card_index_d">
+    发视频 领奖励
+  </div>
+  <div class="zdb_card_index_e">
+    ——  选择任意作品发布即可领取商家奖励  ——
+  </div>
+  <div class="zdb_card_index_h">
+    {$vod}
+  </div>
+  <div class="zdb_card_index_g">
+    <img src="/skin/img/usershopvod.png" alt="">
+  </div>
+
+</div>
+
+
+<div class="zdb_card_index">
+
+  <div class="zdb_card_index_a">
+    <div class="zdb_card_index_a1"><img src="{$shop_img}" alt=""></div>
+    <div class="zdb_card_index_a2">{$shop_name}</div>
+  </div>
+
+</div>
+<!-- top end -->
+
+
+<!-- crad start -->
+<div class="zdb_card_index2">
+  <div class="zdb_card_index_bb">
+    <div class="zdb_card_index_b">
+      <div class="zdb_card_index_b1">{$card_type}</div>
+      <div class="zdb_card_index_b2">{$card_name}</div>
+    </div>
+  </div>
+  <div class="zdb_card_index_c">
+    <div class="zdb_card_index_c1">—————— 活动详情 ——————</div>
+    <div class="zdb_card_index_c2">{$card_info}</div>
+  </div>
+
+</div>
+<!-- crad end -->
+
+
+<!-- lx start -->
+<div class="zdb_card_index2" style="padding-bottom: 80px;">
+  <div class="zdb_card_index_f">
+    <div class="zdb_card_index_f1">
+      <div class="zdb_card_index_f1_a">{$shop_address}</div>
+      <div class="zdb_card_index_f1_b" onclick="window.open('tel:{$shop_phone}');">{$shop_phone}</div>
+    </div>
+    <div class="zdb_card_index_f2"></div>
+    <div class="zdb_card_index_f3">
+      <div class="zdb_card_index_f3_a">
+        <img src="/skin/img/zdb_map.png" alt="">
+        <BR>
+        <span id="jvli"></span> 
+      </div>
+    </div>
+  </div>
+</div>
+<!-- lx end -->
+
+<!-- bottom start -->
+<div class="zdb_card_bottom">
+  <div>
+    <!-- <span style="margin-right: 10px;" id="signout" class="zdb_card_bottom_a" >退出</span> -->
+    <span class="zdb_card_bottom_a" onclick="window.open('https://www.topzhidaobao.top/page/zdb_card_m.php', '_self');">我的卡券</span>
+  </div>
+  <div>
+    <button type="button" class="layui-btn layui-btn-primary zdb_card_bottom_b" style="margin: 0 auto;
+    width: 142px;
+    background: #ff1658 !important;
+    padding: 0px 15px !important;
+    border-radius: 5px !important;
+    color: #FFF !important;
+    border: unset !important;
+    line-height: 38px !important;">确认转发视频</button>
+    <!-- <span class="zdb_card_bottom_b"></span> -->
+  </div>
+</div>
+<!-- bottom end -->
+
+<!-- Script -->
+<script src="/skin/js/jquery-2.1.4.min.js"></script>
+<!-- <script src="/skin/js/bootstrap.min.js"></script> -->
+
+
+<!-- layui JS -->
+<script src="/skin/layui276/layui.js"></script>
+<script src="/skin/js/douyinLogin.js"></script>
+
+
+
+
+<script>
+gewechatCodeData(codeStr);
+// alert(DouyinJsonData['nickname']);
+layui.use(['layer','element','jquery','laydate','util','form','table','upload'], function(){ //独立版的layer无需执行这一句
+  var $ = layui.jquery, 
+  element = layui.element,
+  form = layui.form,
+  laydate = layui.laydate,
+  util = layui.util,
+  table = layui.table,
+  upload = layui.upload,
+  layer = layui.layer; //独立版的layer无需执行这一句
+
+
+// var aa=DouyinJsonData['memberid'];
+// console.log(DouyinJsonData['openid']);
+// let ghgh = localStorage.getItem('DouyinJsonData');
+// if (ghgh==null) {
+//    window.location.reload();
+// }
+
+
+// document.addEventListener('touchstart', function () {
+//   document.getElementsByTagName('video')[0].play();
+//   document.getElementsByTagName('video')[0].pause();
+// });
+
+
+
+
+// 退出按钮 start
+$("#signout").click(function(event) {
+  localStorage.removeItem('DouyinJsonData');
+  layer.msg("已清除缓存");
+});
+// 退出按钮 end
+
+
+document.getElementsByTagName('video')[0].play();
+
+$(".zdb_card_bottom_b").click(function(event) {
+  let Douyin = localStorage.getItem('DouyinJsonData');
+  console.log(DouyinJsonData['nickname']);
+  // alert(DouyinJsonData['nickname']);
+  if(DouyinJsonData==null){
+      let TipContent = '重载数据完成,请再次点击转发';//wx4bce7d4fc35665a4--awi2ozm1w0roqb30
+      $.getScript("/skin/js/douyinLogin.js");
+      alert(TipContent);
+  }else{
+      var vod01 = $("#vod01").val();
+      if (vod01==1) {
+        alert("无视频，请联系商家");
+        return false;
+      }
+ 
+
+
+
+
+      $.ajax({
+            type:'post',
+            url:'/Super/api/zdb/douyin_video_get_snssdk.php', 
+            data:{
+              'memberid':DouyinJsonData['memberid'],
+                'car_id':{$card_id},
+                'active_type':'{$card_type}',
+                'hashtag_list':'{$vod_talk}',
+                'video_url':'{$vod_url}',
+                'video_id':'{$vod_id}',
+                'open_urls':'{$open_urls}',
+                'title':'{$vod_title}',
+                'tjr_id':'{$tjr_id}',
+                'poi_id':'{$shop_poi_id}'
+
+
+            },   
+            dataType:'json',
+
+            
+            // data:JSON.stringify(data.field),    
+            // dataType:'JSON',  
+
+  beforeSend: function () {
+    // 禁用按钮防止重复提交
+    // $(".zdb_card_bottom_b").attr('disabled', 'disabled');
+    var index = layer.load(1, {
+	  shade: [0.1,'#fff'] //0.1透明度的白色背景
+	});
+  },
+  
+            success:function(data){ 
+
+              layer.close(layer.index);
+
+              // layer.msg(data.result.snssdk,{icon:1,time:30000});
+              console.log(data.result.snssdk);
+              // $(".zdb_card_bottom_b").removeAttr("disabled");
+              if (data.msg=="已使用") {
+              	alert("当前视频已使用，页面将自动刷新");
+              	window.location.reload();
+              }else{
+              	window.location.href=data.result.snssdk;
+              }
+              
+              
+              
+              // if (data.data=="成功") {
+              //   //layer.close(layer.index);
+              //   // layer.closeAll();
+
+                
+              //   // table.reload('demo');
+              //   //layer.close(layer.open());
+              //   layer.msg(data.data);
+
+
+
+
+              // }else{
+              //   layer.msg(data.data);
+              // }
+
+                   //alert(data.community_Name);
+                   //赋值信息ID
+
+
+
+                          }, 
+
+                               
+              error:function (data) {
+     
+              }   
+
+          });
+
+
+
+
+  }
+});
+
+
+// 提交表单 start
+          form.on('submit(formDemo)', function(data){
+
+
+            $("button[lay-filter='formDemo']").addClass('layui-btn-disabled');
+            $("button[lay-filter='formDemo']").attr('disabled', 'disabled');
+
+
+            var add_shop_address = $("#add_shop_address").val();  //地址
+            var add_shop_address_jwd = $("#add_shop_address_jwd").val();//经纬度
+            var add_shop_name = $("#add_shop_name").val();//商家名称
+            var add_shop_tel = $("#add_shop_tel").val();//电话
+            var add_shop_logo = $("#add_shop_logo").val();//logo
+
+
+                $.ajax({ 
+                        type:'post',
+                        url:'/Super/api/zdb/reg.php', 
+                        data:{"shop_address":add_shop_address,'shop_address_jwd':add_shop_address_jwd,'shop_name':add_shop_name,'shop_tel':add_shop_tel,'shop_logo':add_shop_logo,'type':"add"},   
+                        dataType:'json',
+
+                        
+                        // data:JSON.stringify(data.field),    
+                        // dataType:'JSON',    
+                        success:function(data){ 
+                          
+                          
+                          if (data.data=="成功") {
+                            //layer.close(layer.index);
+                            // layer.closeAll();
+
+                            
+                            // table.reload('demo');
+                            //layer.close(layer.open());
+                            layer.msg(data.data);
+
+
+
+
+                          }else{
+                            layer.msg(data.data);
+                          }
+
+                               //alert(data.community_Name);
+                               //赋值信息ID
+
+
+
+                                      },      
+                          error:function (data) {
+                 
+                          }   
+
+                      }); 
+
+
+
+
+            return false;
+          });
+// 提交表单 end
+
+
+
+  //普通图片上传 start
+  var uploadInst = upload.render({
+    elem: '#test1'
+    ,url: '/Super/api/zdb/upload_img.php' //此处用的是第三方的 http 请求演示，实际使用时改成您自己的上传接口即可。
+    ,size:5120
+    // ,auto: false
+    // ,bindAction: '#tijiao'
+    // ,data: {
+    //   id:function(){
+    //     return $('input[name=sym_id]').val();
+    //   }
+    // }
+    ,before: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#demo1').attr('src', result); //图片链接（base64）
+        $('#demo1').css({'width':'120px','padding':'5px','height':'100px'});
+      });
+      
+      element.progress('demo', '0%'); //进度条复位
+      layer.msg('上传中', {icon: 16, time: 0});
+    }
+    ,done: function(res){
+      //如果上传失败
+      if(res.code > 0){
+        return layer.msg('上传失败');
+      }
+      
+      $('#add_shop_logo').val(res.data['src']);
+      //上传成功的一些操作
+      //……
+      $('#demoText').html(''); //置空上传失败的状态
+    }
+    ,error: function(){
+      //演示失败状态，并实现重传
+      var demoText = $('#demoText');
+      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+      demoText.find('.demo-reload').on('click', function(){
+        uploadInst.upload();
+      });
+    }
+    //进度条
+    ,progress: function(n, elem, e){
+      element.progress('demo', n + '%'); //可配合 layui 进度条元素使用
+      if(n == 100){
+        layer.msg('上传完毕', {icon: 1});
+      }
+    }
+  });
+  //普通图片上传 end
+
+
+
+//百度地图定位 弹出 start
+    $("input[name='add_shop_address']").click(function() {
+       layer.msg('123');
+      layer.open({
+        type: 2, 
+        area: ['90%', '80%'],
+        content: '/Super/templates/bdmap.html'
+      }); 
+    });
+//百度地图定位 弹出 end
+
+
+
+});
+</script>
+
+<!-- 增加浏览数 -->
+<!-- <script src="/page/add_view.php?a_id={$a_id}"></script> -->
+
+<script type="text/javascript">
+var map = new BMap.Map("allmap");
+var point = new BMap.Point(116.331398,39.897445);
+map.centerAndZoom(point,12);
+
+var geolocation = new BMap.Geolocation();
+// 开启SDK辅助定位
+geolocation.enableSDKLocation();
+geolocation.getCurrentPosition(function(r){
+    if(this.getStatus() == BMAP_STATUS_SUCCESS){
+        var mk = new BMap.Marker(r.point);
+        map.addOverlay(mk);
+        map.panTo(r.point);
+
+
+
+
+function OD(a, b, c) {
+    while (a > c) a -= c - b;
+    while (a < b) a += c - b;
+    return a;
+}
+function SD(a, b, c) {
+    b != null && (a = Math.max(a, b));
+    c != null && (a = Math.min(a, c));
+    return a;
+}
+function getDistance(a_lat,a_lng,b_lat,b_lng) {
+    var a = Math.PI * OD(a_lat, -180, 180) / 180;
+    var b = Math.PI * OD(b_lat, -180, 180) / 180;
+    var c = Math.PI * SD(a_lng, -74, 74) / 180;
+    var d = Math.PI * SD(b_lng, -74, 74) / 180;
+    return 6370996.81 * Math.acos(Math.sin(c) * Math.sin(d) + Math.cos(c) * Math.cos(d) * Math.cos(b-a));
+}
+
+//使用并保留小数点后两位
+var m =getDistance(r.point.lng,r.point.lat,{$shop_zuobiao}).toFixed(2);
+//获取到的单位是 米
+var jvli = (m/1000).toFixed(2);
+$("#jvli").text(jvli+"km");
+
+
+
+
+
+        // alert('您的位置：'+r.point.lng+','+r.point.lat);
+    }
+    else {
+        // alert('failed'+this.getStatus());
+    }        
+});
+</script>
+
+
+
+
+</body>
+</html>
+
